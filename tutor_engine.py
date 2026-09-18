@@ -1,4 +1,3 @@
-"""
 tutor_engine.py
 
 This is the part of the submission that carries the educational reasoning.
