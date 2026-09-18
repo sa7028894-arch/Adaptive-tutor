@@ -39,8 +39,7 @@ XAI_MODEL = os.environ.get("TUTOR_MODEL_XAI", "grok-4-fast")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = os.environ.get("TUTOR_MODEL_GROQ", "openai/gpt-oss-120b")
 
-# Provider is chosen by whichever key is present. Set PROVIDER=anthropic,
-# PROVIDER=xai, or PROVIDER=groq explicitly if you ever have multiple keys set.
+
 def _active_provider():
     forced = os.environ.get("PROVIDER", "").strip().lower()
     if forced in ("anthropic", "xai", "groq"):
@@ -291,9 +290,7 @@ def get_next_turn(history, student_answer):
             "or ANTHROPIC_API_KEY (Claude)."
         )
 
-    # Attach the student's answer to the last history entry so the transcript
-    # serializer can render it (the client sends the answer separately from
-    # the history it already holds for the turn just answered).
+  
     history = list(history)
     if history and student_answer is not None:
         history[-1] = {**history[-1], "student_answer": student_answer}
