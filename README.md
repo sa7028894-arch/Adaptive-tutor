@@ -62,7 +62,7 @@ Works with **any one** of a Groq key, an xAI (Grok) key, or an Anthropic key —
 git clone https://github.com/sa7028894-arch/Adaptive-tutor.git
 cd Adaptive-tutor
 pip install -r requirements.txt
-export GROQ_API_KEY=gsk_...        # or XAI_API_KEY=xai-..., or ANTHROPIC_API_KEY=sk-ant-...
+export GROQ_API_KEY=gsk_...   
 python app.py
 ```
 
@@ -134,11 +134,11 @@ flowchart LR
     API -- "next turn JSON" --> UI
 ```
 
----
+
 
 ## Project structure
 
-```
+
 adaptive-tutor/
 ├── app.py              # Flask routes: serves the page, handles POST /api/turn
 ├── tutor_engine.py      # The actual educational logic + provider calls (Groq / xAI / Anthropic)
@@ -152,7 +152,7 @@ adaptive-tutor/
 └── README.md
 ```
 
----
+
 
 ## Design decisions
 
