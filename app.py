@@ -1,4 +1,3 @@
-"""
 Rebuild the Classroom — Adaptive Tutor for Python Functions
 Flask backend. Calls the Claude API server-side on every turn to decide
 what the student needs next: slow down, jump ahead, reframe, or probe deeper.
