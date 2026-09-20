@@ -1,20 +1,12 @@
-Rebuild the Classroom — Adaptive Tutor for Python Functions
-Flask backend. Calls the Claude API server-side on every turn to decide
-what the student needs next: slow down, jump ahead, reframe, or probe deeper.
-"""
-
 import os
 from flask import Flask, jsonify, render_template, request
-
 from tutor_engine import get_next_turn, TutorEngineError
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def index():
     return render_template("index.html")
-
 
 @app.route("/api/turn", methods=["POST"])
 def turn():
@@ -34,7 +26,6 @@ def turn():
         return jsonify({"error": "engine_error", "message": str(e)}), 502
 
     return jsonify(next_turn)
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
