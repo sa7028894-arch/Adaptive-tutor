@@ -7,8 +7,8 @@ const CONCEPT_LABELS = {
 };
 
 const state = {
-  history: [],       // array of turn objects returned by the server
-  current: null,     // the turn currently on screen
+  history: [],       
+  current: null,    
   selectedOption: null,
   submitting: false,
 };
@@ -24,7 +24,7 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
-// Minimal renderer: turns ```python ... ``` fences into <pre><code>, rest into <p> blocks.
+
 function renderExplanation(text) {
   if (!text) return "";
   const parts = text.split(/```(?:python)?\n?([\s\S]*?)```/g);
@@ -196,7 +196,7 @@ async function submitAnswer(answer) {
   renderLoading();
   try {
     const nextTurn = await fetchTurn(answer);
-    // The turn we just answered gets the student's answer attached for the graph/history record.
+  
     if (state.history.length > 0) {
       state.history[state.history.length - 1].student_answer = answer;
     }
