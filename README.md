@@ -19,7 +19,7 @@ Built for **Rebuild the Classroom**, hosted by LV8 Tech.
 
 ---
 
-## What this is
+## What this is_
 
 Most "AI in education" is a chatbot bolted onto a textbook: same content, same order, for every student. This isn't that.
 
